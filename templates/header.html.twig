@@ -1,0 +1,53 @@
+
+<html>
+    <head>
+        <title>Streusalzshop.de</title>
+          <link rel="stylesheet" href="../styles/main_style.css">
+          <link rel="shortcut icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/001/194/635/large_2x/snowflake-png.png">
+    </head>
+    <body> 
+        <header>
+        <div> ❄ Streusalzshop.de </div>
+    </header>
+    <nav class="navigation">
+        <div>
+             <a href="startseite.php">Startseite</a>  
+        </div>
+       
+        {% if username  is empty %}
+        <div>  
+             <a href="index.php">Anmelden</a>   
+        </div>
+             {% else %}
+         
+            {% endif %}  
+        
+        <div>
+           <a href="aboutus.php"> About us</a>
+        </div>
+        <div>
+          <a href="einkaufswagen.php">Einkaufswagen</a>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <span>Benutzer</span>
+        <div class="dropdown-content">
+            <div class="user_container">
+                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDn65YiCWjptvAOCj6Y97hGtdCVKTDKVjImA&usqp=CAU" alt="" width="100px" height="100px"></div>
+                <div>
+                {% if username  is empty %}
+                    <p id="user_info">Bitte melden sie sich an </p>
+                    <a class="logout" href="index.php">Anmelden</a>
+                    {% else %}
+                    <p id="user_info">Benutzer: {{ username }} <br> E-Mail: {{ email }} </p>
+                    <a class="logout" href="../php/includes/logout.php">Abmelden</a>
+                   {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../script.js">
+    </script>
+    </body>
+</html>
+

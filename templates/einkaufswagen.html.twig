@@ -1,0 +1,26 @@
+
+<html>
+    <head>
+        <title>Streusalzshop.de</title>
+        <link rel="stylesheet" href="../styles/einkaufswagen_style.css">
+        <link rel="stylesheet" href="../styles/main_style.css">
+          
+    </head>
+    <body>
+     <main>
+        <div class="wrapper_produkte ">
+            <h1>Einkaufswagen</h1>
+            <div class="container_produkte">
+            {% for product in products %}
+                    <div>
+                        <img src="https://www.salinen.com/shop/wp-content/uploads/2021/12/salpina-auftausalz-20kg-92700-MAIN.jpg " width="93 " height="93 ">
+                        <p>{{product.NAME}}</p>
+                        <div>Anzahl: {{product.VALUE}}&nbsp;</div> 
+                    <div>Preis: {{product.PRICE}}</div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </main>
+    </body>
+</html>

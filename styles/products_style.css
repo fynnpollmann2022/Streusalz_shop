@@ -1,0 +1,39 @@
+.wrapper_produkte h1 {
+    width: max-content;
+    text-decoration: underline;
+}
+
+.container_produkct {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.container_product h2 {
+    width: 100%;
+    height: fit-content;
+    text-decoration: underline;
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+.container_product button {
+    flex-wrap: wrap;
+    color: white;
+    position: relative;
+    background-color: #2196f3;
+    width: 160px;
+    height: 52px;
+    border-radius: 10px;
+    margin: 5px;
+    left: 80%;
+}
+
+.container_product input {
+    position: relative;
+    width: min-content;
+    height: fit-content;
+    margin: 5px;
+    left: 80%;
+}

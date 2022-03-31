@@ -1,0 +1,25 @@
+    .wrapper_produkte h1 {
+        width: max-content;
+        text-decoration: underline;
+    }
+    
+    .container_produkte {
+        border: 3px black solid;
+        border-radius: 20px;
+    }
+    
+    .container_produkte div {
+        display: flex;
+    }
+    
+    .container_produkte div p {
+        margin-left: 15px;
+        font-size: 30px;
+        text-decoration: underline;
+        padding: 1%;
+    }
+    
+    .container_produkte div div {
+        font-size: 20px;
+        align-items: center;
+    }
