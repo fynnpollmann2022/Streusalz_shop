@@ -37,11 +37,11 @@ include ('header.php');
   
     if(isset($_POST["submit"])){
      require("mysql.php");
-      $query = $mysql->prepare("SELECT * FROM tbl_product WHERE NAME = :name"); 
+      $query = $mysql->prepare("SELECT * FROM accounts WHERE USERNAME = :user"); 
       $query->bindParam(":user", $_POST["username"]);
       $query->execute();
       $count = $query->rowCount();
-
+      
       if($count == 1){
         //Username ist frei
         $row = $query->fetch();

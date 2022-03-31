@@ -7,7 +7,7 @@ $twig = new \Twig\Environment($loader, [
     "debug" => true
 ]);
 
-session_start();
+
 $template = $twig->load('header.html.twig');
  echo $template->render([
      'username' => $_SESSION['username'],

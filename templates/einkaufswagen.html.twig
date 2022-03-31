@@ -13,10 +13,10 @@
             <div class="container_produkte">
             {% for product in products %}
                     <div>
-                        <img src="https://www.salinen.com/shop/wp-content/uploads/2021/12/salpina-auftausalz-20kg-92700-MAIN.jpg " width="93 " height="93 ">
+                        <img src="{{product.IMG}} " width="93 " height="93 ">
                         <p>{{product.NAME}}</p>
-                        <div>Anzahl: {{product.VALUE}}&nbsp;</div> 
-                    <div>Preis: {{product.PRICE}}</div>
+                        <div>Anzahl: {{product.VALUE}}&nbsp;&nbsp;</div> 
+                    <div>Preis: {{product.PRICE}}€</div>
                 </div>
             {% endfor %}
             </div>

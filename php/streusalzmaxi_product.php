@@ -39,9 +39,9 @@ include ('header.php');
                 </p>
                 <form action="streusalzmaxi_product.php" method="post">
                     <button id="add_card_btn" name="submit" type="submit">Add to Card</button>
+                    <input type="number" placeholder="1"  name="value"  required >
+                    <input type="hidden" name="id" value="1">
                 </form>
-                
-
             </div>
         </div>
     </main>
@@ -49,32 +49,25 @@ include ('header.php');
 </html>
 <?php echo $twig->render("footer.html.twig");  
 require("mysql.php");
+
 if(isset($_POST["submit"])){
-    var_dump($_POST);
-     for ($i = 0; $i < $count; $i++) { 
-    
-        var_dump($count);
+    $product_id = $_POST["id"];
+    $product_value = $_POST["value"];
+
+    if (!$_POST["value"] > 0) {
+       echo"Bitte wert eingeben";
+       exit;
     }
+
+    $query = $mysql->prepare("SELECT * FROM tbl_product WHERE id = ?"); 
+    $query->execute($product_id);
+    $result_fetch = $query->fetch();
+
+    $value = $result_fetch["VALUE"] + (int) $product_value;
+
+    $update = $mysql->prepare("UPDATE tbl_product SET VALUE = ? WHERE id = ?");
+    $update->execute([$value,$product_id]);
+
+    header("Location: einkaufswagen.php");
 }
-// if(isset($_POST["submit"])){
-//      $query = $mysql->prepare("INSERT INTO tbl_products WHERE  (VALUE)  (;value)"); 
-//      $query->bindParam(":value", $_POST["value"]); 
-   
-//      $query->execute();  
-//       var_dump(VALUE);
-//     die;
-//   }
-//      $count = $query->rowCount();
-     
-    // //  if($count == 1){
-    // //    //Username ist frei
-    // //    $row = $query->fetch();
-    // //    if(password_verify($_POST["pw"], $row["PASSWORD"])){
-    // //      session_start();  
-    // //      $_SESSION["email"] = $row["EMAIL"] ;    
-    // //      $_SESSION["username"] = $row["USERNAME"] ;
-    // //      header("Location: startseite.php");
-    // //    }
-    // //  }  
-    // }     
-?>
+
