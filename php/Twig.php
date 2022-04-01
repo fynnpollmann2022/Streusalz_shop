@@ -1,12 +1,9 @@
 <?php
 
-
-
-function Twig(){
+function Twig() {
     require_once '../vendor/autoload.php';
-    $loader = new FilesystemLoader('../templates');
-    $twig = new Environment($loader, [
-        'cache' => false,
+    $loader = new \Twig\Loader\FilesystemLoader('../templates');
+    $twig = new \Twig\Environment($loader, [
         'debug' => true
     ]);
     $twig->addExtension(new \Twig\Extension\DebugExtension());
