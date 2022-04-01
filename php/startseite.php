@@ -1,21 +1,16 @@
-<?php 
-require_once '../vendor/autoload.php';
+<?php
 
-$loader = new \Twig\Loader\FilesystemLoader('../templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false, 
-    "debug" => true
-]);
+include 'Twig.php';
 session_start();
+
 include ('header.php');
 
  ?>
-<html>
+<html lang="">
     <head>
         <title>Streusalzshop.de</title>
             <link rel="stylesheet" href="../styles/startseite_style.css">
             <link rel="stylesheet" href="../styles/main_style.css">
-
     </head>
     <body> 
        <main>
@@ -24,7 +19,7 @@ include ('header.php');
             <div class="container_produkte">
                 <div class="container_produkt ">
                     <div class="produkt_image_container ">
-                        <a href="../php/streusalzmaxi_product.php"><img src="https://www.salinen.com/shop/wp-content/uploads/2021/12/salpina-auftausalz-20kg-92700-MAIN.jpg " width="93 " height="93 "></a>
+                        <a href="../php/streusalzmaxi_product.php"><img src="https://www.salinen.com/shop/wp-content/uploads/2021/12/salpina-auftausalz-20kg-92700-MAIN.jpg " width="93 " height="93 " alt="bild"></a>
                         <div>Streusalz maxi 20kg </div>
                     </div>
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor
@@ -49,7 +44,7 @@ include ('header.php');
                     </div>
                     </div>
                     <div class="container_produkt ">
-                    <div class="produkt_image_container "> <img src="https://m.media-amazon.com/images/I/61incgpXekL._AC_SL1500_.jpg " width="100 " height="90 ">
+                    <div class="produkt_image_container "> <img src="https://m.media-amazon.com/images/I/61incgpXekL._AC_SL1500_.jpg " width="100 " height="90 " alt="bild">
                         <div>NOCOR-Taugranulat 5kg</div>
                     </div>
                     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor

@@ -1,37 +1,7 @@
-<?php 
-require_once '../vendor/autoload.php';
+<?php
+include "Twig.php";
+include ('header.php');
 
-$loader = new \Twig\Loader\FilesystemLoader('../templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false, 
-    "debug" => true ]);
-    include ('header.php'); ?>
-  <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Account erstellen</title>
-  </head>
-  <body>
-     <div class=" wrapper_produkte">
-       <h1>Account erstellen</h1>
-            <form action="register.php" method="post">
-            <input type="text" name="username" placeholder="Username" required><br>
-            <input type="email" name="mail" placeholder="E-Mail" required  minlength="5"  ><br>
-            <input type="password" name="pw" placeholder="Passwort" required minlength="8"   ><br>
-            <input type="password" name="pw2" placeholder="Passwort wiederholen" required minlength="8" ><br>
-            <button type="submit" name="submit">Erstellen</button>
-            </form>
-            <br>
-            <a href="index.php">Hast du bereits einen Account?</a>
-      </div>
-  </body>
-</html>
-
-
- <?php  echo $twig->render("footer.html.twig"); ?>
-
- <?php
     if(isset($_POST["submit"])){
       require("mysql.php");
 
@@ -64,4 +34,6 @@ $twig = new \Twig\Environment($loader, [
         }
       } 
     }
-?>
+
+echo Twig()->render('register.html.twig');
+echo $twig->render("footer.html.twig");

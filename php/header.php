@@ -1,11 +1,5 @@
-<?php 
-require_once '../vendor/autoload.php';
-
-$loader = new \Twig\Loader\FilesystemLoader('../templates');
-$twig = new \Twig\Environment($loader, [
-    'cache' => false, 
-    "debug" => true
-]);
+<?php
+include 'Twig.php';
 
 
 $template = $twig->load('header.html.twig');
@@ -13,4 +7,4 @@ $template = $twig->load('header.html.twig');
      'username' => $_SESSION['username'],
      'email' => $_SESSION['email'],
  ]);
- ?>
+

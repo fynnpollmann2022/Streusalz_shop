@@ -1,10 +1,8 @@
-
-<html>
+<html lang="en">
     <head>
         <title>Streusalzshop.de</title>
         <link rel="stylesheet" href="../styles/einkaufswagen_style.css">
         <link rel="stylesheet" href="../styles/main_style.css">
-          
     </head>
     <body>
      <main>
@@ -13,7 +11,7 @@
             <div class="container_produkte">
             {% for product in products %}
                     <div>
-                        <img src="{{product.IMG}} " width="93 " height="93 ">
+                        <img src="{{product.IMG}} " width="93 " height="93 " alt="bild">
                         <p>{{product.NAME}}</p>
                         <div>Anzahl: {{product.VALUE}}&nbsp;&nbsp;</div> 
                     <div>Preis: {{product.PRICE}}€</div>

@@ -18,7 +18,8 @@ require("mysql.php");
     $abfrage->execute();
     $ergebnismenge = $abfrage->fetchAll();
 
-    echo Twig()->render('einkaufswagen.html.twig', ['products' => $ergebnismenge]);
+
+echo Twig()->render('einkaufswagen.html.twig', ['products' => $ergebnismenge]);
   
 
  echo $twig->render("footer.html.twig");
