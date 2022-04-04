@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+ {% block h1 %}
+     <h1>Feedback</h1>
+ {% endblock %}
+ {% block container %}
+     <div class="container_product ">
+         <form action="../php/feedback.php" method="post">
+             <label>Sterne: </label>
+             <select name="sterne">
+                 <option value="5">5</option>
+                 <option value="4">4</option>
+                 <option value="3">3</option>
+                 <option value="2">2</option>
+                 <option value="1">1</option>
+             </select><br>
+             <textarea name="message" rows="8" cols="80" required></textarea><br>
+             <button type="submit" name="submit">Absenden</button>
+         </form>
+     </div>
+ {% endblock %}

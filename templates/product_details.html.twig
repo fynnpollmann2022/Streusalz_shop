@@ -13,7 +13,7 @@
              <p>
                 {{product.BESCHREIBUNG}}
              </p>
-             <form action="product_details.php" method="post">
+             <form action="../php/product_details.php" method="post">
                  <button id="add_card_btn" name="submit" type="submit">Add to Card</button>
                  <input type="number" placeholder="1"  name="value"  required >
                  <input type="hidden" name="id" value="{{ product.ID }}">
