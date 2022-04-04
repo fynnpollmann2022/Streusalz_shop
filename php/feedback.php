@@ -10,7 +10,6 @@ if(!isset($_SESSION["username"])){
 if(isset($_POST["submit"])) {
     mail("pollmannfynn@gmail.com", "Kontaktformular", 'Name: ' . $_SESSION["username"] . ' Email: ' . $_SESSION['email'] . ' Sterne: ' . $_POST["sterne"] . ' Nachricht: ' . $_POST["message"]);
 }
-echo ('Feedback wurde abgeschickt!');
 
 echo Twig()->render('feedback.html.twig',[
                      'sterne' => $_POST["sterne"],

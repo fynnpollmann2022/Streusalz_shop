@@ -23,12 +23,20 @@
         <div>
            <a href="../php/aboutus.php"> About us</a>
         </div>
-        <div>
-          <a href="../php/einkaufswagen.php">Einkaufswagen</a>
-        </div>
-        <div>
-            <a href="../php/feedback.php">Feedback</a>
-        </div>
+        {% if username  is empty %}
+
+        {% else %}
+            <div>
+                <a href="../php/einkaufswagen.php">Einkaufswagen</a>
+            </div>
+        {% endif %}
+        {% if username  is empty %}
+
+        {% else %}
+            <div>
+                <a href="../php/feedback.php">Feedback</a>
+            </div>
+        {% endif %}
     </nav>
     <div class="dropdown">
         <span>Benutzer</span>
