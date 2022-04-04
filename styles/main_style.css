@@ -107,13 +107,12 @@
     
     main {
         display: flex;
+        justify-content: center;
     }
     
     .wrapper{
         flex-direction: column;
         display: flex;
-        text-align: center;
-        justify-content: center;
         background-color: rgba(240, 248, 255, 0.548);
         width: fit-content;
         height: fit-content;
@@ -125,7 +124,8 @@
         padding: 1% 1% 1% 1%;
     }
     .wrapper h1 {
-        width: 100%;
+        width: fit-content;
+        text-align: center;
         height: fit-content;
         text-decoration: underline;
     }

@@ -1,6 +1,6 @@
-.container_produkte h1 {
+.wrapper h1 {
     text-decoration: underline;
-    width: 100%;
+    width: fit-content;
     margin: 0;
 }
 .container_produkte{

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block stylelink %}
+    <link rel="stylesheet" href="../styles/products_style.css">
+    {{ parent() }}
+{% endblock %}
+ {% block h1 %}
+     <h1>Streusalz</h1>
+ {% endblock %}
+ {% block container %}
+         <div class="container_product ">
+             <img src="{{product.IMG}}" alt="bild" width="250 " height="250 ">
+             <h2>Produkt Beschreibung</h2>
+             <p>
+                {{product.BESCHREIBUNG}}
+             </p>
+             <form action="product_details.php" method="post">
+                 <button id="add_card_btn" name="submit" type="submit">Add to Card</button>
+                 <input type="number" placeholder="1"  name="value"  required >
+                 <input type="hidden" name="id" value="{{ product.ID }}">
+             </form>
+         </div>
+ {% endblock %}

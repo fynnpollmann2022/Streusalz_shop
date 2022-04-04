@@ -1,39 +1,42 @@
-.wrapper_produkte h1 {
-    width: max-content;
-    text-decoration: underline;
-}
-
-.container_produkct {
+.container_product {
+    width: fit-content;
     flex: 1;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
+.container_product img {
 
+    margin-left: 2%
+}
 .container_product h2 {
-    width: 100%;
+    width: fit-content;
     height: fit-content;
     text-decoration: underline;
     margin-left: 5%;
     margin-right: 3%;
 }
-
+.container_product p {
+    text-align: left;
+    width: 50%;
+}
+.container_product form {
+    display: flex;
+}
 .container_product button {
-    flex-wrap: wrap;
+    justify-content: left;
     color: white;
-    position: relative;
     background-color: #2196f3;
     width: 160px;
     height: 52px;
     border-radius: 10px;
     margin: 5px;
-    left: 80%;
+
 }
 
 .container_product input {
-    position: relative;
-    width: min-content;
+    width: fit-content;
     height: fit-content;
     margin: 5px;
-    left: 80%;
+
 }

@@ -9,11 +9,15 @@
 {% block container %}
 <div class="container_produkte">
     {% for product in products %}
+        <div>
+            <img src="{{product.IMG}} " width="100 " height="100" alt="bild">
+            <p>{{product.NAME}}</p>
             <div>
-                <img src="{{product.IMG}} " width="100 " height="100" alt="bild">
-                <p>{{product.NAME}}</p>
-                <div>Anzahl: {{product.VALUE}}&nbsp;&nbsp;</div>
-            <div>Preis: {{product.PRICE}}€</div>
+                Anzahl: {{product.VALUE}}&nbsp;&nbsp;
+            </div>
+             <div>
+                Preis: {{product.PRICE}}€
+            </div>
         </div>
     {% endfor %}
 </div>
