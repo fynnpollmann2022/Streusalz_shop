@@ -109,9 +109,13 @@
         display: flex;
     }
     
-    .wrapper_produkte {
+    .wrapper{
+        flex-direction: column;
+        display: flex;
+        text-align: center;
+        justify-content: center;
         background-color: rgba(240, 248, 255, 0.548);
-        width: 98%;
+        width: fit-content;
         height: fit-content;
         border: black 3px solid;
         border-radius: 20px;
@@ -119,6 +123,11 @@
         margin-top: 3%;
         margin-right: 1%;
         padding: 1% 1% 1% 1%;
+    }
+    .wrapper h1 {
+        width: 100%;
+        height: fit-content;
+        text-decoration: underline;
     }
     
     footer {

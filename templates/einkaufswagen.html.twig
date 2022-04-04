@@ -1,24 +1,20 @@
-<html lang="en">
-    <head>
-        <title>Streusalzshop.de</title>
-        <link rel="stylesheet" href="../styles/einkaufswagen_style.css">
-        <link rel="stylesheet" href="../styles/main_style.css">
-    </head>
-    <body>
-     <main>
-        <div class="wrapper_produkte ">
-            <h1>Einkaufswagen</h1>
-            <div class="container_produkte">
-            {% for product in products %}
-                    <div>
-                        <img src="{{product.IMG}} " width="93 " height="93 " alt="bild">
-                        <p>{{product.NAME}}</p>
-                        <div>Anzahl: {{product.VALUE}}&nbsp;&nbsp;</div> 
-                    <div>Preis: {{product.PRICE}}€</div>
-                </div>
-            {% endfor %}
-            </div>
+{% extends 'base.html.twig' %}
+{% block stylelink %}
+    <link rel="stylesheet" href="../styles/einkaufswagen_style.css">
+    {{ parent() }}
+{% endblock %}
+{% block h1 %}
+    <h1>Einkaufswagen</h1>
+{% endblock %}
+{% block container %}
+<div class="container_produkte">
+    {% for product in products %}
+            <div>
+                <img src="{{product.IMG}} " width="100 " height="100" alt="bild">
+                <p>{{product.NAME}}</p>
+                <div>Anzahl: {{product.VALUE}}&nbsp;&nbsp;</div>
+            <div>Preis: {{product.PRICE}}€</div>
         </div>
-    </main>
-    </body>
-</html>
+    {% endfor %}
+</div>
+{% endblock %}

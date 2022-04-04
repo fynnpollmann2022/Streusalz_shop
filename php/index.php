@@ -1,6 +1,7 @@
 <?php
 include 'Twig.php';
-include 'header.php';
+
+
 
     if(isset($_POST["submit"])){
      require("mysql.php");
@@ -26,6 +27,6 @@ include 'header.php';
       }
     }
 
-echo Twig()->render("index.html.twig");
+echo Twig()->render("index.html.twig",['username' => $_SESSION['username'],
+                                                 'email' => $_SESSION['email'],]);
 
-echo $twig->render("footer.html.twig");

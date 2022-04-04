@@ -1,20 +1,18 @@
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Account erstellen</title>
-</head>
-<body>
-<div class=" wrapper_produkte">
+{% extends 'base.html.twig' %}
+{% block stylelink %}
+    <link rel="stylesheet" href="../styles/login_style.css">
+    {{ parent() }}
+{% endblock %}
+{% block h1%}
     <h1>Account erstellen</h1>
-    <form action="../php/register.php" method="post">
+{% endblock %}
+{% block container %}
+    <form class="login" action="../php/register.php" method="post">
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="email" name="mail" placeholder="E-Mail" required  minlength="5"  ><br>
         <input type="password" name="pw" placeholder="Passwort" required minlength="8"   ><br>
         <input type="password" name="pw2" placeholder="Passwort wiederholen" required minlength="8" ><br>
-        <button type="submit" name="submit">Erstellen</button>
+        <button type="submit" name="submit">Erstellen</button>  <br>
+        <a href="../php/index.php">Hast du bereits einen Account?</a>
     </form>
-    <br>
-    <a href="../php/index.php">Hast du bereits einen Account?</a>
-</div>
-</body>
-</html>
+{% endblock %}

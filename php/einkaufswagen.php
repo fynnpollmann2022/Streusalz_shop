@@ -8,7 +8,7 @@ include 'Twig.php';
    header("Location: index.php");
    exit;
  }
- include ('header.php'); 
+;
 
 
 
@@ -19,8 +19,10 @@ require("mysql.php");
     $ergebnismenge = $abfrage->fetchAll();
 
 
-echo Twig()->render('einkaufswagen.html.twig', ['products' => $ergebnismenge]);
-  
+echo Twig()->render('einkaufswagen.html.twig', ['products' => $ergebnismenge,
+                                                        'username' => $_SESSION['username'],
+                                                        'email' => $_SESSION['email'],]);
 
- echo $twig->render("footer.html.twig");
+
+
   

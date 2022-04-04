@@ -1,6 +1,6 @@
 <?php
 include "Twig.php";
-include ('header.php');
+
 
     if(isset($_POST["submit"])){
       require("mysql.php");
@@ -35,5 +35,5 @@ include ('header.php');
       } 
     }
 
-echo Twig()->render('register.html.twig');
-echo $twig->render("footer.html.twig");
+echo Twig()->render('register.html.twig',['username' => $_SESSION['username'],
+                                                         'email' => $_SESSION['email'],]);

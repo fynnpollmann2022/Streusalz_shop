@@ -1,8 +1,10 @@
 <?php
-include "Twig.php";
-include ('header.php');
-echo Twig()->render("aboutus.html.twig");
-echo $twig->render("footer.html.twig");
+
+include 'Twig.php';
+session_start();
+echo Twig()->render("aboutus.html.twig",['username' => $_SESSION['username'],
+                                                'email' => $_SESSION['email'],]);
+
 
 
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "Twig.php";
-include 'header.php';
+
 if(!isset($_SESSION["username"])){
   header("Location: index.php");
   exit;
@@ -38,7 +38,7 @@ if(!isset($_SESSION["username"])){
 </html>
 <?php
 
-require_once("mysql.php");
+require("mysql.php");
 if(isset($_POST["submit"])){
     $product_id = $_POST["id"];
     $product_value = $_POST["value"];
@@ -48,8 +48,9 @@ if(isset($_POST["submit"])){
         exit;
     }
 
-    $query = $mysql->prepare("SELECT * FROM tbl_product WHERE id = ?"); 
-    $query->execute($product_id);
+    $query = $mysql->prepare("SELECT * FROM tbl_product WHERE id = ?");
+    $query->execute([$product_id]);
+
     $result_fetch = $query->fetch();
 
     $value = $result_fetch["VALUE"] + (int) $product_value;
@@ -59,4 +60,3 @@ if(isset($_POST["submit"])){
 
     header("Location: einkaufswagen.php");
 }
-echo $twig->render("footer.html.twig");

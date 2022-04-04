@@ -1,19 +1,16 @@
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="../styles/main_style.css">
-</head>
-<body>
-<div class=" wrapper_produkte">
+{% extends 'base.html.twig' %}
+{% block stylelink %}
+    <link rel="stylesheet" href="../styles/login_style.css">
+    {{ parent() }}
+{% endblock %}
+{% block h1%}
     <h1>Anmelden</h1>
-    <form action="../php/index.php" method="post">
+{% endblock %}
+{% block container %}
+    <form class="login" action="../php/index.php" method="post">
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="password" name="pw" placeholder="Passwort" required><br>
-        <button type="submit" name="submit">Einloggen</button>
+        <button type="submit" name="submit">Einloggen</button><br>
+        <a href="../php/register.php">Noch keinen Account?</a>
     </form>
-    <br>
-    <a href="../php/register.php">Noch keinen Account?</a>
-</div>
-</body>
-</html>
+{% endblock %}
