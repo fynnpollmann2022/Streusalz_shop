@@ -40,7 +40,11 @@ if(isset($_POST["submit"])){
     header("Location: einkaufswagen.php");
 }
 
-
-echo Twig()->render('product_details.html.twig', ['product' => $product,
-                                                        'username' => $_SESSION['username'],
-                                                        'email' => $_SESSION['email'],]);
+echo Twig()->render('product_details.html.twig',
+    [
+        'product' => $product,
+        'username' => $_SESSION['username'],
+        'email' => $_SESSION['email'],
+        'admin' => $_SESSION['admin'],
+    ]
+);

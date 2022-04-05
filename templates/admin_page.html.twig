@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+{% block h1 %}
+    <h1>Admin Page</h1>
+{% endblock %}
+{% block container %}
+    <h2>Produkt Verwaltung:</h2>
+        {% for product in products %}
+            <form action="../php/admin_page.php" method="post">
+                <input type="hidden" name="id" value="{{ product.ID }}">
+                <label>
+                    Produkt Name:
+                    <textarea name="name" rows="1">{{product.NAME}}</textarea>
+                </label>
+                <label>
+                    Produkte noch auf lager:
+                    <textarea name="value" cols="4" rows="1">{{product.VALUE_LAGER}}</textarea>
+                </label>
+                <label>
+                    Produkt Preis:
+                    <textarea name="price" cols="4" rows="1">{{product.PRICE}}</textarea>
+                </label>
+                <label>
+                    Produkt Bild:
+                    <textarea name="image" rows="1">{{product.IMG}}</textarea>
+                </label>
+                <label>
+                    Produkt Beschreibung kurz:
+                    <textarea name="titel" rows="1">{{product.TITEL}}</textarea>
+                </label>
+                <label>
+                    Produkt Beschreibung mit breaks:
+                    <textarea name="beschreibung" rows="1">{{product.BESCHREIBUNG}}</textarea>
+                </label>
+                <br>
+                <button name="submit" type="submit">Save changes</button>
+            </form>
+        {% endfor %}
+    <h2>Benutzer Verwaltung:</h2>
+    {% for user in users %}
+        <form action="../php/admin_page.php" method="post">
+            <input type="hidden" name="id_user" value="{{ user.ID }}">
+            <label>
+                 Username:
+                <textarea name="username" rows="1">{{ user.USERNAME }}</textarea>
+            </label>
+            <label>
+                E-Mail:
+                <textarea name="email"  rows="1">{{ user.EMAIL }}</textarea>
+            </label>
+            <label>
+                Admin status:
+                <textarea name="is_admin" cols="2" rows="1">{{ user.IS_ADMIN }}</textarea>
+            </label>
+            <br>
+            <button name="submit_user" type="submit">Save changes</button>
+        </form>
+    {% endfor %}
+{% endblock %}

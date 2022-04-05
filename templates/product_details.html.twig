@@ -10,8 +10,10 @@
          <div class="container_product ">
              <img src="{{product.IMG}}" alt="bild" width="250 " height="250 ">
              <h2>Produkt Beschreibung</h2>
+             <h3>Preis: {{ product.PRICE }}€</h3>
+             <h4>Noch auf Lager: {{ product.VALUE_LAGER }}Stk.</h4>
              <p>
-                {{product.BESCHREIBUNG}}
+                {{product.BESCHREIBUNG|raw}}
              </p>
              <form action="../php/product_details.php" method="post">
                  <button id="add_card_btn" name="submit" type="submit">Add to Card</button>

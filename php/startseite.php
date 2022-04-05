@@ -10,9 +10,14 @@ $abfrage->execute();
 $ergebnismenge = $abfrage->fetchAll();
 
 
-echo Twig()->render('startseite.html.twig', ['products' => $ergebnismenge,
-                                                    'username' => $_SESSION['username'],
-                                                    'email' => $_SESSION['email'],]);
+echo Twig()->render('startseite.html.twig',
+    [
+        'products' => $ergebnismenge,
+        'admin' => (bool)$_SESSION['admin'],
+        'username' => $_SESSION['username'],
+        'email' => $_SESSION['email'],
+    ]
+);
 
 
   

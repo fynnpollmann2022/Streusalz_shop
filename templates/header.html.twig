@@ -1,43 +1,45 @@
-<html lang="en">
-    <head>
-        <title>Streusalzshop.de</title>
-          <link rel="shortcut icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/001/194/635/large_2x/snowflake-png.png">
-    </head>
-    <body>
-        <header>
-            <div> ❄ Streusalzshop.de </div>
-        </header>
-    <nav class="navigation">
-        <div>
-             <a href="../php/startseite.php">Startseite</a>
-        </div>
+<header>
+    <div class="headline">
+       <p>❄ Streusalzshop.de</p>
+    </div>
+        <nav class="navigation">
+            <div>
+                <a href="../php/startseite.php">Startseite</a>
+            </div>
 
-        {% if username  is empty %}
-        <div>
-             <a href="../php/index.php">Anmelden</a>
-        </div>
-             {% else %}
+            {% if username  is empty %}
+                <div>
+                    <a href="../php/index.php">Anmelden</a>
+                </div>
+            {% else %}
 
             {% endif %}
 
-        <div>
-           <a href="../php/aboutus.php"> About us</a>
-        </div>
-        {% if username  is empty %}
+            <div>
+                <a href="../php/aboutus.php"> About us</a>
+            </div>
+            {% if username  is empty %}
 
-        {% else %}
+            {% else %}
             <div>
                 <a href="../php/einkaufswagen.php">Einkaufswagen</a>
             </div>
-        {% endif %}
-        {% if username  is empty %}
+            {% endif %}
+            {% if admin == true %}
+                <div>
+                    <a href="../php/admin_page.php">Admin page</a>
+                </div>
+                {% else %}
 
-        {% else %}
-            <div>
-                <a href="../php/feedback.php">Feedback</a>
-            </div>
-        {% endif %}
-    </nav>
+            {% endif %}
+            {% if username  is empty %}
+
+            {% else %}
+                <div>
+                    <a href="../php/feedback.php">Feedback</a>
+                </div>
+                {% endif %}
+        </nav>
     <div class="dropdown">
         <span>Benutzer</span>
         <div class="dropdown-content">
@@ -55,8 +57,6 @@
             </div>
         </div>
     </div>
-    <script src="../script.js">
-    </script>
-    </body>
-</html>
+</header>
+
 

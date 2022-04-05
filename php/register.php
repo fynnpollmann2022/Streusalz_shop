@@ -21,7 +21,6 @@ include "Twig.php";
             $query->bindParam(":user", $_POST["username"]);
             $query->bindParam(":pw", $hash);
             $query->execute();
-          
             echo "Dein Account wurde angelegt";
             header("Location: index.php");
           }
@@ -35,5 +34,10 @@ include "Twig.php";
       } 
     }
 
-echo Twig()->render('register.html.twig',['username' => $_SESSION['username'],
-                                                         'email' => $_SESSION['email'],]);
+echo Twig()->render('register.html.twig',
+    [
+        'username' => $_SESSION['username'],
+         'email' => $_SESSION['email'],
+        'admin' => $_SESSION['admin'],
+    ]
+);

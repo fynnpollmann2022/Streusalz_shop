@@ -17,6 +17,7 @@ include 'Twig.php';
           session_start();  
           $_SESSION["email"] = $row["EMAIL"] ;    
           $_SESSION["username"] = $row["USERNAME"] ;
+          $_SESSION["admin"] = (bool)$row["IS_ADMIN"] ;
           header("Location: startseite.php");
         } else {
           echo "Der Login ist fehlgeschlagen";
@@ -27,6 +28,11 @@ include 'Twig.php';
       }
     }
 
-echo Twig()->render("index.html.twig",['username' => $_SESSION['username'],
-                                                 'email' => $_SESSION['email'],]);
+echo Twig()->render("index.html.twig",
+    [
+        'username' => $_SESSION['username'],
+        'email' => $_SESSION['email'],
+         'admin' => $_SESSION['admin'],
+    ]
+);
 

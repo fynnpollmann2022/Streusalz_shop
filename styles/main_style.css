@@ -3,27 +3,29 @@
     }
     
     body {
-        background-image: url(https://cdn.pixabay.com/photo/2017/02/10/03/12/winter-2054297_960_720.jpg);
+        background-image: url("https://img.welt.de/img/channels-extern/ipad/schoenes_leben_ipad/mobile101842029/4581358177-ci16x9-w1200/mac-salz-BM-Wissenschaft-Hamburg-jpg.jpg");
         background-size: 100%;
         padding: 0;
         margin: 0;
+
     }
-    
-    header {
+    .dark{
+        filter: invert(1.5);
+    }
+    .headline {
         display: flex;
-        height: 95px;
         justify-content: center;
-        width: 100%;
     }
     
-    header div {
+    .headline p{
+        margin: 1%;
         padding: 3px;
         border: black solid 2px;
         border-radius: 20px;
         height: fit-content;
-        background-color: rgba(255, 255, 255, 0.623);
         font-style: italic;
         font-size: 40px;
+        background-image: linear-gradient(lightskyblue, white);
     }
     
     .navigation {
