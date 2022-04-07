@@ -51,7 +51,7 @@
     .navigation div a:hover {
         text-decoration: underline;
         background-color: transparent;
-        color: blue;
+        color: cornflowerblue;
     }
     
     .dropdown {
@@ -100,7 +100,7 @@
     
     .logout:hover {
         text-decoration: underline;
-        color: blue;
+        color: cornflowerblue;
     }
     
     .dropdown:hover .dropdown-content {
@@ -145,5 +145,5 @@
     
     footer a:hover {
         text-decoration: underline;
-        color: blue;
+        color: cornflowerblue;
     }

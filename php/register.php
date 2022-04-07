@@ -14,7 +14,7 @@ include "Twig.php";
         if(empty($userResult)) {
           if($_POST["pw"] == $_POST["pw2"]){
             //User anlegen
-            $query = $mysql->prepare("INSERT INTO accounts (USERNAME, PASSWORD, EMAIL) VALUES (:user, :pw, :mail)");
+            $query = $mysql->prepare("INSERT INTO accounts (USERNAME, PASSWORD, EMAIL, TOKEN) VALUES (:user, :pw, :mail, null)");
             $hash = password_hash($_POST["pw"], PASSWORD_BCRYPT);
             
             $query->bindParam(":mail", $_POST["mail"]);
